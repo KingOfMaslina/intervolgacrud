@@ -14,14 +14,14 @@
     <input type="submit" value="Добавить">
 </form>
 <?php
-//подключение к БД
+//подключение к бд
 $conn = new mysqli("localhost", "root", "", "volgacrud");
 if($conn->connect_error){
 die("Ошибка: " . $conn->connect_error);
 }
 $sql = "SELECT * FROM comment";
 if($result = mysqli_query($conn, $sql))
-   //вывод записей из БД
+   //вывод записей
    foreach($result as $row){
     echo "<div class = 'comment'>";
     echo "<a class = 'name'>" . $row["name"] . "</a>";
